@@ -1,0 +1,12 @@
+*
+
+!*.*
+
+!*/
+
+build/*
+_test/
+.vscode/
+.DS_Store
+.null-ls*.go
+tools/local/traefik/cert
