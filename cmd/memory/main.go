@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/rtihomir/mcp-tools/internal/memory/config"
+	"github.com/rtihomir/mcp-tools/internal/memory/store"
+)
 
 func main() {
-	fmt.Println("hello from memory")
+	c := config.NewConfig()
+	s := store.NewStore(c)
+	fmt.Println(s)
 }
