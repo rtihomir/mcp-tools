@@ -12,11 +12,11 @@ import (
 
 // ListFilesResponse represents the response from the list_files tool
 type ListFilesResponse struct {
-	Success        bool                        `json:"success"`
-	HomeDir        string                      `json:"home_dir"`
-	AvailableFiles map[string][]string        `json:"available_files"`
-	TotalFiles     int                        `json:"total_files"`
-	Message        string                      `json:"message"`
+	Success        bool                `json:"success"`
+	HomeDir        string              `json:"home_dir"`
+	AvailableFiles map[string][]string `json:"available_files"`
+	TotalFiles     int                 `json:"total_files"`
+	Message        string              `json:"message"`
 }
 
 // HandleListFiles handles the list_files tool request

@@ -230,7 +230,7 @@ func max(a, b int) int {
 // ListSupportedFiles lists files in a directory that DuckDB can work with
 func ListSupportedFiles(homeDir string) (map[string][]string, error) {
 	files := make(map[string][]string)
-	
+
 	entries, err := os.ReadDir(homeDir)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read directory: %w", err)
@@ -243,7 +243,7 @@ func ListSupportedFiles(homeDir string) (map[string][]string, error) {
 
 		name := entry.Name()
 		ext := strings.ToLower(filepath.Ext(name))
-		
+
 		switch ext {
 		case ".db", ".duckdb":
 			files["DuckDB Databases"] = append(files["DuckDB Databases"], name)
@@ -253,6 +253,8 @@ func ListSupportedFiles(homeDir string) (map[string][]string, error) {
 			files["Parquet Files"] = append(files["Parquet Files"], name)
 		case ".json":
 			files["JSON Files"] = append(files["JSON Files"], name)
+		case ".xlsx":
+			files["Excel Files"] = append(files["Excel Files"], name)
 		}
 	}
 

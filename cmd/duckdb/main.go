@@ -82,6 +82,3 @@ func registerPrompts(s *server.MCPServer) {
 			return prompt.HandleDuckDBInitialPrompt(request.Params.Arguments)
 		})
 }
-
-// For now, we'll implement file listing as a tool instead of a resource
-// since the mcp-go library version might not fully support resources yet
